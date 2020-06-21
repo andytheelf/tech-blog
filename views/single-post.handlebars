@@ -1,22 +1,18 @@
-<!-- displaying articles -->
 {{> post-info post}}
-
-<!-- displaying form and comments-->
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
-    <textarea class="ml-5" name="comment-body"></textarea>
+    <textarea name="comment-body"></textarea>
   </div>
 
   <div>
-    <button class="button is-warning ml-5 mb-5" type="submit">add comment</button>
+    <button class="uk-button-default" type="submit">add comment</button>
   </div>
-  
 </form>
 {{/if}}
-
+<!-- partial -->
 {{> comments post.comments}}
 
 {{#if loggedIn}}
-<script src="/public/javascript/comment.js"></script>
+<script  src='/javascript/comment.js'></script>
 {{/if}}

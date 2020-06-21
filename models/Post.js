@@ -40,7 +40,7 @@ Post.init({
     },
     post_url: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
 
     },
     user_id: {

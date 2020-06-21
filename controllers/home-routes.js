@@ -4,12 +4,13 @@ const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
     console.log(req.session);
+
     Post.findAll({
             attributes: [
                 'id',
                 'post_url',
                 'title',
-                'created_at'
+                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
             ],
             include: [{
                     model: Comment,
@@ -26,6 +27,8 @@ router.get('/', (req, res) => {
             ]
         })
         .then(dbPostData => {
+            // pass a single post object 
+            console.log(dbPostData[0]);
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('homepage', {
                 posts,
@@ -56,7 +59,7 @@ router.get('/post/:id', (req, res) => {
                 'id',
                 'post_url',
                 'title',
-                'created_at'
+                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
             ],
             include: [{
                     model: Comment,
@@ -78,7 +81,7 @@ router.get('/post/:id', (req, res) => {
                 return;
             }
 
-            // serialize the data
+
             const post = dbPostData.get({ plain: true });
 
             // pass data to template

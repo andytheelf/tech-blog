@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Tech Blog!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
+  <div class="wrapper">
+    <header class="nav justify-content">
+      <h1 class="nav-items">
+        <a class="nav-link" href="/">Tech Blog</a>
+      </h1>
+      <nav>
+        {{#if loggedIn}}
+        <a class="nav-item" href="/dashboard">Create a Post</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a class="nav-item" href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      See you later!
+    </footer>
+  </div>
 
-{{{body}}}
-
-<script src="/assets/js/index.js"></script> 
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
+
 </html>

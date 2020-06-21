@@ -4,24 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog
-  </title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title></title>
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
 </head>
 
 <body>
   <div class="wrapper">
-    <header class="nav justify-content">
-      <h1 class="nav-items">
-        <a class="nav-link" href="/">Tech Blog</a>
+    <header>
+      <h1>
+        
       </h1>
       <nav>
         {{#if loggedIn}}
-        <a class="nav-item" href="/dashboard">Create a Post</a>
-        <button id="logout" class="btn-no-style">Logout</button>
+          <a href="/dashboard">Post A Note</a>
+         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a class="nav-item" href="/login">Login</a>
+         <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
@@ -29,13 +27,14 @@
       {{{ body }}}
     </main>
     <footer>
-      See you later!
+      Share your thoughts!
     </footer>
   </div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/public/javascript/logout.js"></script>
+  {{/if}}
+
 </body>
 
 </html>

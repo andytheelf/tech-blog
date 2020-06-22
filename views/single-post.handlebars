@@ -1,18 +1,20 @@
-{{> post-info post}}
+{{> post-info post }}
 {{#if loggedIn}}
-<form class="comment-form uk-align-center">
+<form class="comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea id="comment-body" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button class="uk-button-secondary" type="submit">Add a Comment</button>
+    <button type="submit" class="submit-btn">add comment</button>
+    <button type="button" class="upvote-btn">add an upvote</button>
   </div>
 </form>
 {{/if}}
-<!-- partial -->
-{{> comments post.comments}}
+
+{{> comments post.comments }}
 
 {{#if loggedIn}}
-<script  src='/javascript/comment.js'></script>
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
 {{/if}}

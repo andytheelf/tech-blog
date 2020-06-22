@@ -6,7 +6,7 @@ async function deleteFormHandler(event) {
     ];
 
 
-    const delComment = await fetch(`/api/comments/${id}`, {
+    const resComment = await fetch(`/api/comments/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -14,13 +14,13 @@ async function deleteFormHandler(event) {
         })
         .then(response => response.json());
 
-    for (var i = 0; i < delComment.length; i++) {
+    for (var i = 0; i < resComment.length; i++) {
         console.log(resComment[i].id);
-        await fetch(`/api/comments/${delComment[i].id}`, {
+        await fetch(`/api/comments/${resComment[i].id}`, {
             method: 'DELETE'
         });
 
-        console.log(`Deleted Comment ${delComment[i].id}`);
+        console.log(`Deleted Comment ${resComment[i].id}`);
     }
 
 

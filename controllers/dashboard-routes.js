@@ -12,7 +12,7 @@ router.get('/', withAuth, (req, res) => {
                 'id',
                 'post_url',
                 'title',
-                'created_at', //use litteral for vote count
+                'created_at',
             ],
             include: [{
                     model: Comment,
@@ -49,7 +49,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 'id',
                 'post_url',
                 'title',
-                'created_at', //use litteral for vote count
+                'created_at',
             ],
             include: [{
                     model: Comment,

@@ -1,24 +1,22 @@
 <section>
-  
-
   <form class="new-post-form">
        <fieldset class="uk-fieldset">
-<legend class="uk-legend">New Post</legend>
+<legend class="uk-legend uk-text-primary">New Post</legend>
     <div class="uk-margin">
       
-      <input class="uk-input" type="text" id="post-title" name="post-title" placeholder="Title"/>
+      <input class="uk-input" type="text" id="post-title" name="post-title" placeholder="Article Title"/>
     </div>
     <div class="uk-margin">
       
-      <input class="uk-input" id="post-url" name="post-url" placeholder="Paste URL Here"/>
+      <input class="uk-input" id="post-url" name="post-url" placeholder="Link!"/>
     </div>
-    <button type="submit" class="btn uk-button uk-button-default">Post</button>
+    <button type="submit" class="btn uk-button uk-button-secondary">Post</button>
     </fieldset>
   </form>
 </section>
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>

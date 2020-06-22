@@ -11,7 +11,7 @@ const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const sess = {
     secret: 'SecretSquirrel',
-    cookie: { maxAge: 600000 },
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -25,7 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-// turn on routes
 app.use(routes);
 
 // turn on connection to db and server

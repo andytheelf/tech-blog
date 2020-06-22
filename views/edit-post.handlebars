@@ -1,5 +1,5 @@
 <article class="uk-container uk-container-large" >
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <a href="/dashboard"> &larr; Dashboard</a>
   <h2>
     Edit Post
   </h2>
@@ -10,12 +10,12 @@
       <span>({{format_url post.post_url}})</span>
     </div>
     <div>
-        by you on {{format_date post.created_at}}
+        created on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    <button type="submit" class="uk-button-default">Save post</button>
-    <button type="button" class="delete-post-btn uk-button-default">Delete post</button>
+    <button type="submit" class="uk-button-secondary">Save</button>
+    <button type="button" class="delete-post-btn uk-button-secondary">Delete</button>
   </form>
   </div>
   <div>
@@ -25,7 +25,7 @@
   </div>
 
   <div>
-    <button class="uk-button-default"type="submit">add comment</button>
+    <button class="uk-button-secondary"type="submit">Add a Comment</button>
   </div>
 </form>
 </div>
